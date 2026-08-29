@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tax GPS | RealTech</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="container">
+
+  <h1>RealTech Tax GPS</h1>
+  <p>Guided Tax Declaration</p>
+
+  <div class="card">
+    <h3 id="stepTitle">Step 1: Review Invoices</h3>
+
+    <p id="stepText">
+      Confirm all invoices before continuing.
+    </p>
+
+    <hr>
+
+    <p><strong>Sales VAT:</strong> 145,000 RWF</p>
+    <p><strong>Purchase VAT:</strong> 38,000 RWF</p>
+    <p><strong>VAT Payable:</strong> 107,000 RWF</p>
+
+    <br>
+
+    <button onclick="nextStep()" class="btn">
+      Next Step
+    </button>
+  </div>
+
+</div>
+
+<script>
+
+let step=1;
+
+const titles=[
+"Step 1: Review Invoices",
+"Step 2: Calculate VAT",
+"Step 3: Open VAT Declaration",
+"Step 4: Ready to Submit"
+];
+
+const texts=[
+"Confirm all invoices before continuing.",
+"AI has calculated your VAT.",
+"Open VAT Declaration in e-Tax.",
+"Your declaration is ready."
+];
+
+function nextStep(){
+
+ if(step<4){
+   step++;
+ }else{
+   step=1;
+ }
+
+ document.getElementById("stepTitle").innerHTML=titles[step-1];
+ document.getElementById("stepText").innerHTML=texts[step-1];
+
+}
+
+</script>
+
+</body>
+</html>
